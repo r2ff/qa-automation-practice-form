@@ -28,7 +28,7 @@ public class StudentRegistrationFormTest {
         open("https://demoqa.com/automation-practice-form");
     }
 
-    @AfterEach
+    //@AfterEach
     void closeBrowser() {
         log.info("@AfterEach");
         closeWebDriver();
@@ -47,9 +47,9 @@ public class StudentRegistrationFormTest {
         $(".react-datepicker__year-select").selectOption("1905");
         $(".react-datepicker__month-select").selectOption("December");
         $(".react-datepicker__day--009").click();
-        //выбираем Subjects через подсказки
-        $("#subjectsInput").setValue("e");
-        $("#react-select-2-option-0").click();
+
+        $("#subjectsInput").setValue("English");
+        $(byText("English")).click();
 
         $(byText("Sports")).click();
         $(byText("Reading")).click();
